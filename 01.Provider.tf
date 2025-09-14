@@ -1,9 +1,15 @@
-variable "AWS_ACCESS_KEY_ID" {
-  description = "AWS Access Key ID"
-  type        = string
+terraform {
+  required_version = ">= 1.0.0, <2.0.0"
+
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+  }
 }
 
-variable "AWS_SECRET_ACCESS_KEY" {
-  description = "AWS Secret Access Key"
-  type        = string
+provider "aws" {
+  region = "ap-northeast-2" #Asia Pacific (seoul) region
+
 }
